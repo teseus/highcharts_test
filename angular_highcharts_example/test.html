@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+    
+    <head>
+        <meta charset="utf-8">
+        <title>My AngularJS App</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>        
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js"></script>
+        <script src="http://code.highcharts.com/highcharts.js"></script>
+        <script src="http://code.highcharts.com/modules/exporting.js"></script>
+        <script src="assets/javascripts/test.js"></script>
+        <link href="assets/stylesheets/test.css" rel="stylesheet" type="text/css" media="all">
+    </head>
+    
+    <body ng-controller="stageController">
+         <h1>Plot: {{type}}</h1>
+
+        <div id="ctrls">
+            <p class="button" ng-click="utopia();">Utopia</p>
+            <p class="button" id="nightmare">Nightmare</p>
+            <br/>
+            <p class="button red" id="broken">Doesn't work</p>
+            <p class="button green" ng-click="initData();">Restore</p>
+        </div>
+        <div id="debug">
+             <h2>Actual value of data:</h2>
+
+            <ul>
+                <li ng-repeat="d in data">{{d}}</li>
+            </ul>
+        </div>
+        <!-- directive -->
+        <div id="container" draw-pie-chart=""></div>
+    </body>
+
+</html>
